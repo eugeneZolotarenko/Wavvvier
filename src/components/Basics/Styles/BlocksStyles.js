@@ -2,7 +2,8 @@ import styled from "styled-components"
 
 export const HeaderStyles = styled.nav`
   padding: 15px 3%;
-  background-color: seashell;
+  /* background-color: seashell; */
+  background-color: #454546;
   border-bottom: 2px solid lightseagreen;
   position: absolute;
   width: 100%;

@@ -7,5 +7,9 @@ const GlobalStyles = createGlobalStyle`
     .coddy {
         font-family: 'Source Code Pro', monospace;
     }
+
+    body {
+        background-color: #454546
+    }
 `
 export default GlobalStyles
