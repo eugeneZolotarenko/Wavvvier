@@ -17,7 +17,9 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        background-color: #454546;
+        background-color: seashell;
+        max-height: 100vh;
+        overflow: hidden;
     }
 `
 export default GlobalStyles

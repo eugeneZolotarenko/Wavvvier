@@ -1,13 +1,17 @@
 import React, { useState } from "react"
 import { Paper, Tabs, Tab, Slider } from "@material-ui/core"
 import * as S from "./StylleAll"
-import WaveContainer from "./WaveContainer"
+import { VanillaCSSWaveCode, HtmlWaveCode } from "./WaveContainer"
 
-function Controllers({ options, setOptions, svg }) {
-  console.log(WaveContainer)
+function Controllers({ options, setOptions, svg, waveColor, setWaveColor }) {
+  console.log(waveColor)
   const [tab, setTab] = useState(0)
   // const [valueHeight, setValueHeight] = useState(options.height)
   // const [valuePosition, setValuePosition] = useState(options.position)
+
+  const input = document.querySelector("input[name='WaveColor']")
+
+  input && input.addEventListener("click", e => e.preventDefault())
 
   const handleChange = (key, newVal) => {
     setOptions({
@@ -48,12 +52,28 @@ function Controllers({ options, setOptions, svg }) {
                   />
                 </S.SliderContainer>
               ))}
+              <S.CustomColorPicker
+                backgroundColor={waveColor}
+                name="WaveColor"
+                // defaultValue=""
+                value={waveColor}
+                onChange={color => setWaveColor(color)}
+              />
             </div>
           )}
+          {tab === 1 && (
+            <S.CustomTextareaAutosize
+              rowsMax={3}
+              marginBottom={true}
+              value={HtmlWaveCode}
+            />
+          )}
           {tab === 2 && (
-            <S.CustomTextareaAutosize>
-              {WaveContainer(options, svg)}
-            </S.CustomTextareaAutosize>
+            <S.CustomTextareaAutosize
+              rowsMax={12}
+              marginBottom={true}
+              value={VanillaCSSWaveCode(options, svg)}
+            />
           )}
         </S.ControllersContent>
       </Paper>
