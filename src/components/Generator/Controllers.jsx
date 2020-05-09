@@ -1,9 +1,10 @@
 import React, { useState } from "react"
-import { Paper, Tabs, Tab, Slider, Checkbox } from "@material-ui/core"
+import { Paper, Tabs, Tab, Slider } from "@material-ui/core"
 import * as S from "./StylleAll"
+import WaveContainer from "./WaveContainer"
 
-function Controllers({ options, setOptions }) {
-  console.log(Object.entries(options))
+function Controllers({ options, setOptions, svg }) {
+  console.log(WaveContainer)
   const [tab, setTab] = useState(0)
   // const [valueHeight, setValueHeight] = useState(options.height)
   // const [valuePosition, setValuePosition] = useState(options.position)
@@ -33,14 +34,28 @@ function Controllers({ options, setOptions }) {
           <Tab label="HTML" />
           <Tab label="CSS" />
         </Tabs>
-        {Object.entries(options).map(([key, option]) => (
-          <Slider
-            value={option.value}
-            onChange={(e, newVal) => handleChange(key, newVal)}
-            min={option.min}
-            max={option.max}
-          />
-        ))}
+        <S.ControllersContent>
+          {tab === 0 && (
+            <div>
+              {Object.entries(options).map(([key, option]) => (
+                <S.SliderContainer key={key}>
+                  <label>{key}</label>
+                  <Slider
+                    value={option.value}
+                    onChange={(e, newVal) => handleChange(key, newVal)}
+                    min={option.min}
+                    max={option.max}
+                  />
+                </S.SliderContainer>
+              ))}
+            </div>
+          )}
+          {tab === 2 && (
+            <S.CustomTextareaAutosize>
+              {WaveContainer(options, svg)}
+            </S.CustomTextareaAutosize>
+          )}
+        </S.ControllersContent>
       </Paper>
     </S.Controllers>
   )

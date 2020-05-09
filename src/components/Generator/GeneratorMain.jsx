@@ -5,46 +5,34 @@ import Controllers from "./Controllers"
 
 function Main() {
   const [options, setOptions] = useState({
-    height: {
+    Height: {
       min: 60,
-      max: 300,
+      max: 160,
       value: 124,
     },
-    position: {
+    Position: {
       min: 0,
       max: 100,
       value: 20,
     },
-    wide: {
-      min: 1,
-      max: 0.8,
-      value: 1,
+    Sharpness: {
+      min: 60,
+      max: 100,
+      value: 100,
     },
   })
 
-  const wider = options.wide.value
+  function numForSvg(num) {
+    const sharper = options.Sharpness.value * 0.01
+    return Math.floor(sharper * num)
+  }
 
-  const svg = `data:image/svg+xml;utf8,<svg viewBox='0 0 1200 134' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0 ${
-    wider * 98.3836
-  }L50 ${wider * 92.3836}C100 ${wider * 86.3836} 200 ${wider * 74.3836} 300 ${
-    wider * 50.3836
-  }C400 ${wider * 26.3836} 500 ${wider * -9.61644} 600 ${wider * 2.38356}C700 ${
-    wider * 14.3836
-  } 800 ${wider * 74.3836} 900 ${wider * 98.3836}C1000 ${
-    wider * 122.384
-  } 1100 ${wider * 110.384} 1150 ${wider * 104.384}L1200 ${
-    wider * 98.3836
-  }V134.384H1150C1100 ${wider * 134.384} 1000 ${wider * 134.384} 900 ${
-    wider * 134.384
-  }C800 ${wider * 134.384} 700 ${wider * 134.384} 600 ${wider * 134.384}C500 ${
-    wider * 134.384
-  } 400 ${wider * 134.384} 300 ${wider * 134.384}C200 ${wider * 134.384} 100 ${
-    wider * 134.384
-  } 50 ${wider * 134.384}H0V98.3836Z' fill='%23454546'/></svg>`
+  // prettier-ignore
+  const svg = `data:image/svg+xml;utf8,<svg viewBox='0 0 1200  ${numForSvg(134)}' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0 ${numForSvg(98.3836)}L50 ${numForSvg(92.3836)}C100 ${numForSvg(86.3836)} 200 ${numForSvg(74.3836)} 300 ${numForSvg(50.3836)}C400 ${numForSvg(26.3836)} 500 ${numForSvg(-9.61644)} 600 ${numForSvg(2.38356)}C700 ${numForSvg(14.3836)} 800 ${numForSvg(74.3836)} 900 ${numForSvg(98.3836)}C1000 ${numForSvg(122.384)} 1100 ${numForSvg(110.384)} 1150 ${numForSvg(104.384)}L1200 ${numForSvg(98.3836)}V134.384H1150C1100 ${numForSvg(134.384)} 1000 ${numForSvg(134.384)} 900 ${numForSvg(134.384)}C800 ${numForSvg(134.384)} 700 ${numForSvg(134.384)} 600 ${numForSvg(134.384)}C500 ${numForSvg(134.384)} 400 ${numForSvg(134.384)} 300 ${numForSvg(134.384)}C200 ${numForSvg(134.384)} 100 ${numForSvg(134.384)} 50 ${numForSvg(134.384)}H0V98.3836Z' fill='%23454546'/></svg>`
 
   return (
     <S.Header options={options} svg={svg}>
-      <Controllers options={options} setOptions={setOptions} />
+      <Controllers options={options} setOptions={setOptions} svg={svg} />
     </S.Header>
   )
 }
