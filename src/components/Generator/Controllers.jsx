@@ -3,15 +3,25 @@ import { Paper, Tabs, Tab, Slider } from "@material-ui/core"
 import * as S from "./StylleAll"
 import { VanillaCSSWaveCode, HtmlWaveCode } from "./WaveContainer"
 
-function Controllers({ options, setOptions, svg, waveColor, setWaveColor }) {
+function Controllers({
+  options,
+  setOptions,
+  svg,
+  waveColor,
+  setWaveColor,
+  containerColor,
+  setContainerColor,
+}) {
   console.log(waveColor)
   const [tab, setTab] = useState(0)
   // const [valueHeight, setValueHeight] = useState(options.height)
   // const [valuePosition, setValuePosition] = useState(options.position)
 
-  const input = document.querySelector("input[name='WaveColor']")
-
-  input && input.addEventListener("click", e => e.preventDefault())
+  const inputs = document.querySelectorAll("input[name='color']")
+  inputs &&
+    inputs.forEach(input =>
+      input.addEventListener("click", e => e.preventDefault())
+    )
 
   const handleChange = (key, newVal) => {
     setOptions({
@@ -52,18 +62,31 @@ function Controllers({ options, setOptions, svg, waveColor, setWaveColor }) {
                   />
                 </S.SliderContainer>
               ))}
-              <S.CustomColorPicker
-                backgroundColor={waveColor}
-                name="WaveColor"
-                // defaultValue=""
-                value={waveColor}
-                onChange={color => setWaveColor(color)}
-              />
+              <S.ColorPickerContainer>
+                <div className="colors-wrapper">
+                  <label>Set Wave color - </label>
+                  <S.CustomColorPicker
+                    backgroundcolor={waveColor}
+                    name="color"
+                    value={waveColor}
+                    onChange={color => setWaveColor(color)}
+                  />
+                </div>
+                <div className="colors-wrapper">
+                  <label>Set Continer color - </label>
+                  <S.CustomColorPicker
+                    backgroundcolor={containerColor}
+                    name="color"
+                    value={containerColor}
+                    onChange={color => setContainerColor(color)}
+                  />
+                </div>
+              </S.ColorPickerContainer>
             </div>
           )}
           {tab === 1 && (
             <S.CustomTextareaAutosize
-              rowsMax={3}
+              rowsMax={1}
               marginBottom={true}
               value={HtmlWaveCode}
             />
@@ -72,7 +95,7 @@ function Controllers({ options, setOptions, svg, waveColor, setWaveColor }) {
             <S.CustomTextareaAutosize
               rowsMax={12}
               marginBottom={true}
-              value={VanillaCSSWaveCode(options, svg)}
+              value={VanillaCSSWaveCode(options, svg, containerColor)}
             />
           )}
         </S.ControllersContent>

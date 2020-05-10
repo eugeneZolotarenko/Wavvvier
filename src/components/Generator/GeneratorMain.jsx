@@ -22,6 +22,7 @@ function Main() {
     },
   })
   const [waveColor, setWaveColor] = useState("seashell")
+  const [containerColor, setContainerColor] = useState("lightseagreen")
 
   function numForSvg(num) {
     const sharper = options.Sharpness.value * 0.01
@@ -38,13 +39,15 @@ function Main() {
 
   return (
     <>
-      <S.Header options={options} svg={svg}>
+      <S.Header options={options} svg={svg} containerColor={containerColor}>
         <Controllers
           options={options}
           setOptions={setOptions}
           svg={svg}
           waveColor={waveColor}
           setWaveColor={setWaveColor}
+          containerColor={containerColor}
+          setContainerColor={setContainerColor}
         />
       </S.Header>
       <S.BottomContent className="iiii" waveColor={waveColor}></S.BottomContent>

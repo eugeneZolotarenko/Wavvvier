@@ -1,44 +1,39 @@
-export const WaveContainer = (options, svg) => `
+const wave = (svg, height, position) => `
+  content: "";
+  width: 100%;
+  height: ${height}px;
+  position: absolute;
+  bottom: -0.1%;
+  left: 0;
+  background-size: auto;
+  background-repeat: repeat no-repeat;
+  background-position: ${position}vw bottom;
+  background-image: url("${svg}");
+`
+
+const container = color => `
   height: 50vh;
-  background-color: lightseagreen;
+  background-color: ${color};
   position: relative;
+`
 
+const cssClassContainer = "wave-container"
+
+export const WaveContainer = (options, svg, containerColor) => `
+  ${container(containerColor)}
   &::before {
-    content: "";
-    width: 100%;
-    height: ${options.Height.value}px;
-    position: absolute;
-    bottom: -0.1%;
-    left: 0;
-    background-size: auto;
-    background-repeat: repeat no-repeat;
-    background-position: ${options.Position.value}vw bottom;
-    background-image: url("${svg}");
+    ${wave(svg, options.Height.value, options.Position.value)}
   }
 `
+// prettier-ignore
+export const VanillaCSSWaveCode = (options, svg, containerColor) => `\
+.${cssClassContainer} {\
+  ${container(containerColor)}\
+}
+.${cssClassContainer}::before { \
+  ${wave(svg, options.Height.value, options.Position.value)}\
+}`
 
-const cssClassWaveContainer = "wave-container"
-
-export const VanillaCSSWaveCode = (options, svg) => `
-  .${cssClassWaveContainer} {
-    height: 50vh;
-    background-color: lightseagreen;
-    position: relative;
-  }
-  .${cssClassWaveContainer}::before {
-    content: "";
-    width: 100%;
-    height: ${options.Height.value}px;
-    position: absolute;
-    bottom: -0.1%;
-    left: 0;
-    background-size: auto;
-    background-repeat: repeat no-repeat;
-    background-position: ${options.Position.value}vw bottom;
-    background-image: url("${svg}");
-  }
-`
-
-export const HtmlWaveCode = `
- <div class="${cssClassWaveContainer}"></div>
+export const HtmlWaveCode = `\
+ <div class="${cssClassContainer}"></div>
 `

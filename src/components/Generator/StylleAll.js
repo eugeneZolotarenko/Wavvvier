@@ -5,7 +5,7 @@ import ColorPicker from "material-ui-color-picker"
 
 export const Header = styled.header`
   margin-top: 68px;
-  ${props => WaveContainer(props.options, props.svg)};
+  ${props => WaveContainer(props.options, props.svg, props.containerColor)};
 `
 
 export const Controllers = styled.section`
@@ -19,7 +19,7 @@ export const Controllers = styled.section`
     max-width: 700px;
     min-width: 300px;
     width: 40%;
-    padding: 10px 25px;
+    padding: 10px 25px 20px 25px;
     z-index: 1;
     background-color: seashell;
     .MuiTabs-root {
@@ -50,16 +50,22 @@ export const CustomTextareaAutosize = styled(TextareaAutosize)`
   overflow: auto;
 `
 
-export const CustomColorPicker = styled(ColorPicker)`
-  background-color: ${props => props.backgroundColor};
-  input {
-    border: 1px solid lightseagreen;
-    cursor: pointer;
+export const ColorPickerContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  flex-wrap: wrap;
+  .colors-wrapper {
+    margin: 15px 15px 0 0;
   }
 `
 
-// For controls =>
-// 1. height (as proparty css)
-// 2. background-position
-// 3. height of svg
-// bonus - color
+export const CustomColorPicker = styled(ColorPicker)`
+  background-color: ${props => props.backgroundcolor};
+  input {
+    width: 40px;
+    border: 2px solid #3f51b5;
+    cursor: pointer;
+  }
+`
