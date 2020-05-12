@@ -18,10 +18,10 @@ export const Controllers = styled.section`
   .MuiPaper-root {
     max-width: 700px;
     min-width: 300px;
-    width: 40%;
-    padding: 10px 25px 20px 25px;
+    width: 80%;
+    padding: 10px 25px 10px 25px;
     z-index: 1;
-    background-color: seashell;
+    background-color: rgba(255, 245, 238, 0.85);
     .MuiTabs-root {
       margin-bottom: 20px;
     }
@@ -29,6 +29,7 @@ export const Controllers = styled.section`
 `
 export const ControllersContent = styled.div`
   width: 100%;
+  display: ${props => (props.isVisible ? "block" : "none")};
 `
 
 export const SliderContainer = styled.div`
@@ -37,7 +38,7 @@ export const SliderContainer = styled.div`
 
 export const BottomContent = styled.section`
   width: 100%;
-  height: 50vh;
+  height: 40vh;
   background-color: ${props => props.waveColor};
 `
 
@@ -67,5 +68,18 @@ export const CustomColorPicker = styled(ColorPicker)`
     width: 40px;
     border: 2px solid #3f51b5;
     cursor: pointer;
+  }
+`
+
+export const ControlToggle = styled.div`
+  padding: 10px 0 0 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.23);
+  cursor: pointer;
+  margin-top: 20px;
+  > span {
+    color: rgba(0, 0, 0, 0.54);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `

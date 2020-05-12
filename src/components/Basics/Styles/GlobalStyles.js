@@ -1,6 +1,11 @@
 import { createGlobalStyle } from "styled-components"
 
-const GlobalStyles = createGlobalStyle`
+export const Variables = {
+  seashell: "#FFF5EE",
+  lightseagreen: "#20B2AA",
+}
+
+export const GlobalStyles = createGlobalStyle`
     html {
         font-size: 10px;
     }
@@ -17,9 +22,8 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        background-color: seashell;
+        background-color: ${props => props.theme.seashell};
         max-height: 100vh;
         overflow: hidden;
     }
 `
-export default GlobalStyles

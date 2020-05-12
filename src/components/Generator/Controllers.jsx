@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Nothing } from "nothing-mock"
 import { Paper, Tabs, Tab, Slider } from "@material-ui/core"
+import { ExpandLess, ExpandMore, FileCopy } from "@material-ui/icons"
 import * as S from "./StylleAll"
 import { VanillaCSSWaveCode, HtmlWaveCode } from "./WaveContainer"
 
@@ -13,8 +14,8 @@ function Controllers({
   containerColor,
   setContainerColor,
 }) {
-  console.log(waveColor)
   const [tab, setTab] = useState(0)
+  const [isVisible, setVisible] = React.useState(true)
 
   const document = Nothing
   const inputs = document.querySelectorAll("input[name='color']")
@@ -48,7 +49,7 @@ function Controllers({
           <Tab label="HTML" />
           <Tab label="CSS" />
         </Tabs>
-        <S.ControllersContent>
+        <S.ControllersContent isVisible={isVisible}>
           {tab === 0 && (
             <div>
               {Object.entries(options).map(([key, option]) => (
@@ -99,6 +100,18 @@ function Controllers({
             />
           )}
         </S.ControllersContent>
+        <S.ControlToggle onClick={() => setVisible(!isVisible)}>
+          {isVisible && (
+            <span>
+              <ExpandLess /> Hide
+            </span>
+          )}
+          {!isVisible && (
+            <span>
+              <ExpandMore /> Show
+            </span>
+          )}
+        </S.ControlToggle>
       </Paper>
     </S.Controllers>
   )

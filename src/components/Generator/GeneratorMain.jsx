@@ -2,27 +2,28 @@
 import React, { useState } from "react"
 import * as S from "./StylleAll"
 import Controllers from "./Controllers"
+import { Variables } from "./../Basics/Styles/GlobalStyles"
 
 function Main() {
   const [options, setOptions] = useState({
     Height: {
-      min: 60,
+      min: 20,
       max: 160,
       value: 124,
-    },
-    Position: {
-      min: 0,
-      max: 100,
-      value: 20,
     },
     Sharpness: {
       min: 60,
       max: 100,
       value: 100,
     },
+    Position: {
+      min: 0,
+      max: 100,
+      value: 20,
+    },
   })
-  const [waveColor, setWaveColor] = useState("seashell")
-  const [containerColor, setContainerColor] = useState("lightseagreen")
+  const [waveColor, setWaveColor] = useState(Variables.seashell)
+  const [containerColor, setContainerColor] = useState(Variables.lightseagreen)
 
   function numForSvg(num) {
     const sharper = options.Sharpness.value * 0.01

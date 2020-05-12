@@ -8,11 +8,11 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
+import { ThemeProvider } from "styled-components"
 import Nav from "./Nav"
 
 import ResetStyles from "./Styles/ResetStyles"
-import GlobalStyles from "./Styles/GlobalStyles"
+import { GlobalStyles, Variables } from "./Styles/GlobalStyles"
 import { FooterStyles } from "./Styles/BlocksStyles"
 
 const Layout = ({ children }) => {
@@ -27,7 +27,7 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <ThemeProvider theme={Variables}>
       <ResetStyles />
       <GlobalStyles />
       <Nav siteTitle={data.site.siteMetadata.title} />
@@ -40,7 +40,7 @@ const Layout = ({ children }) => {
           </a>
         </FooterStyles>
       </div>
-    </>
+    </ThemeProvider>
     // </ResetStyles>
   )
 }
