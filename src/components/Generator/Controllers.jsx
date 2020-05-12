@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { Nothing } from "nothing-mock"
 import { Paper, Tabs, Tab, Slider } from "@material-ui/core"
 import * as S from "./StylleAll"
 import { VanillaCSSWaveCode, HtmlWaveCode } from "./WaveContainer"
@@ -14,9 +15,8 @@ function Controllers({
 }) {
   console.log(waveColor)
   const [tab, setTab] = useState(0)
-  // const [valueHeight, setValueHeight] = useState(options.height)
-  // const [valuePosition, setValuePosition] = useState(options.position)
 
+  const document = Nothing
   const inputs = document.querySelectorAll("input[name='color']")
   inputs &&
     inputs.forEach(input =>
