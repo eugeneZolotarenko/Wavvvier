@@ -5,11 +5,12 @@ import Controllers from "./Controllers"
 import { Variables } from "./../Basics/Styles/GlobalStyles"
 
 function Main() {
+  // const waveHeight = window.innerWidth * 0.1 * 0.67
   const [options, setOptions] = useState({
     Height: {
-      min: 20,
-      max: 160,
-      value: 124,
+      min: 10,
+      max: 168,
+      value: 130,
     },
     Sharpness: {
       min: 60,

@@ -54,7 +54,7 @@ function Controllers({
             <div>
               {Object.entries(options).map(([key, option]) => (
                 <S.SliderContainer key={key}>
-                  <label>{key}</label>
+                  <label>{key === "Height" ? "Height of svg" : key}</label>
                   <Slider
                     value={option.value}
                     onChange={(e, newVal) => handleChange(key, newVal)}

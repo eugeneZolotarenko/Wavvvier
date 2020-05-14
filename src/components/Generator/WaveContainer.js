@@ -17,6 +17,14 @@ const container = color => `
   position: relative;
 `
 
+const responsiveWave = height => `
+@media (max-width:850px) {
+  .wave-container {
+    height: ${height * 0.5}
+  }
+}
+`
+
 const cssClassContainer = "wave-container"
 
 export const WaveContainer = (options, svg, containerColor) => `
@@ -32,7 +40,8 @@ export const VanillaCSSWaveCode = (options, svg, containerColor) => `\
 }
 .${cssClassContainer}::before { \
   ${wave(svg, options.Height.value, options.Position.value)}\
-}`
+}\
+${responsiveWave(options.Height.value)}`
 
 export const HtmlWaveCode = `\
  <div class="${cssClassContainer}"></div>
