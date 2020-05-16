@@ -22,7 +22,6 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        background-color: ${props => props.theme.seashell};
         max-height: 100vh;
         overflow: hidden;
     }

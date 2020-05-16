@@ -3,7 +3,7 @@ const wave = (svg, height, position) => `
   width: 100%;
   height: ${height}px;
   position: absolute;
-  bottom: -0.1%;
+  bottom: -0.3%;
   left: 0;
   background-size: auto;
   background-repeat: repeat no-repeat;
@@ -18,11 +18,7 @@ const container = color => `
 `
 
 const responsiveWave = height => `
-@media (max-width:850px) {
-  .wave-container {
     height: ${height * 0.5}px
-  }
-}
 `
 
 const cssClassContainer = "wave-container"
@@ -31,6 +27,9 @@ export const WaveContainer = (options, svg, containerColor) => `
   ${container(containerColor)}
   &::before {
     ${wave(svg, options.Height.value, options.Position.value)}
+    @media(max-width:850px) {
+      ${responsiveWave(options.Height.value)}
+    }
   }
 `
 // prettier-ignore
@@ -38,10 +37,16 @@ export const VanillaCSSWaveCode = (options, svg, containerColor) => `\
 .${cssClassContainer} {\
   ${container(containerColor)}\
 }
+
 .${cssClassContainer}::before { \
   ${wave(svg, options.Height.value, options.Position.value)}\
-}\
-${responsiveWave(options.Height.value)}`
+}
+
+@media(max-width:850px) {
+  .wave-container::before {\
+    ${responsiveWave(options.Height.value)}\
+  }  
+}`
 
 export const HtmlWaveCode = `\
  <div class="${cssClassContainer}"></div>

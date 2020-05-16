@@ -10,7 +10,7 @@ function Main() {
   const [containerColor, setContainerColor] = useState(Variables.lightseagreen)
   const [options, setOptions] = useState({
     Height: {
-      min: 10,
+      min: 15,
       max: 168,
       value: 130,
     },
