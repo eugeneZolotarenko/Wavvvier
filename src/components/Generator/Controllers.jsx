@@ -1,9 +1,10 @@
 import React, { useState } from "react"
 import { Nothing } from "nothing-mock"
+import useClipboard from "react-use-clipboard"
 import { Paper, Tabs, Tab, Slider } from "@material-ui/core"
 import { ExpandLess, ExpandMore, FileCopy } from "@material-ui/icons"
 import * as S from "./StylleAll"
-import { VanillaCSSWaveCode, HtmlWaveCode } from "./WaveContainer"
+import { VanillaCSSWaveCode, HtmlWaveCode } from "./WaveCode"
 
 function Controllers({
   options,
@@ -16,13 +17,22 @@ function Controllers({
 }) {
   const [tab, setTab] = useState(0)
   const [isVisible, setVisible] = React.useState(true)
+  const [isCopiedCSS, setCopiedCSS] = useClipboard(
+    VanillaCSSWaveCode(options, svg, containerColor),
+    { successDuration: 1500 }
+  )
+  const [isCopiedHTML, setCopiedHTML] = useClipboard(HtmlWaveCode, {
+    successDuration: 1500,
+  })
 
+  // Added for correct color pickinig
   const document = Nothing
   const inputs = document.querySelectorAll("input[name='color']")
   inputs &&
     inputs.forEach(input =>
       input.addEventListener("click", e => e.preventDefault())
     )
+  //
 
   const handleChange = (key, newVal) => {
     setOptions({
@@ -49,7 +59,7 @@ function Controllers({
           <Tab label="HTML" />
           <Tab label="CSS" />
         </Tabs>
-        <S.ControllersContent isVisible={isVisible}>
+        <S.ControllersContent waveColor={containerColor} isVisible={isVisible}>
           {tab === 0 && (
             <div>
               {Object.entries(options).map(([key, option]) => (
@@ -86,18 +96,30 @@ function Controllers({
             </div>
           )}
           {tab === 1 && (
-            <S.CustomTextareaAutosize
-              rowsMax={1}
-              marginBottom={true}
-              value={HtmlWaveCode}
-            />
+            <div className="text-area-wrapper">
+              <button onClick={setCopiedHTML}>
+                <FileCopy />{" "}
+                <span>{isCopiedHTML ? "Copppied! 🔥" : "Copy Code 💡"}</span>
+              </button>
+              <S.CustomTextareaAutosize
+                rowsMax={2}
+                marginBottom={true}
+                value={HtmlWaveCode}
+              />
+            </div>
           )}
           {tab === 2 && (
-            <S.CustomTextareaAutosize
-              rowsMax={12}
-              marginBottom={true}
-              value={VanillaCSSWaveCode(options, svg, containerColor)}
-            />
+            <div className="text-area-wrapper">
+              <button onClick={setCopiedCSS}>
+                <FileCopy />{" "}
+                <span>{isCopiedCSS ? "Copppied! 🔥" : "Copy Code 💡"}</span>
+              </button>
+              <S.CustomTextareaAutosize
+                rowsMax={12}
+                marginBottom={true}
+                value={VanillaCSSWaveCode(options, svg, containerColor)}
+              />
+            </div>
           )}
         </S.ControllersContent>
         <S.ControlToggle onClick={() => setVisible(!isVisible)}>

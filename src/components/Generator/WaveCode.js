@@ -20,7 +20,7 @@ const container = color => `
 const responsiveWave = height => `
 @media (max-width:850px) {
   .wave-container {
-    height: ${height * 0.5}
+    height: ${height * 0.5}px
   }
 }
 `

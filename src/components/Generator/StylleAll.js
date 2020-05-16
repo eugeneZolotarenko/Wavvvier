@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { TextareaAutosize } from "@material-ui/core"
-import { WaveContainer } from "./WaveContainer"
+import { WaveContainer } from "./WaveCode"
 import ColorPicker from "material-ui-color-picker"
 
 export const Header = styled.header`
@@ -30,6 +30,28 @@ export const Controllers = styled.section`
 export const ControllersContent = styled.div`
   width: 100%;
   display: ${props => (props.isVisible ? "block" : "none")};
+  .text-area-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    button {
+      cursor: pointer;
+      background: none;
+      border: none;
+      display: flex;
+      align-items: center;
+      padding: 5px;
+      margin: 0 0 10px 0;
+      span {
+        padding-left: 10px;
+      }
+      svg {
+        color: ${props => props.waveColor};
+        width: 1.7em;
+        height: 1.7em;
+      }
+    }
+  }
 `
 
 export const SliderContainer = styled.div`
