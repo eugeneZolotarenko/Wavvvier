@@ -25,7 +25,7 @@ function Main() {
       value: 20,
     },
   })
-  const [numberOfSVG, setNumberOfSVG] = useState(1)
+  const [numberOfSVG, setNumberOfSVG] = useState(0)
   const svg = CreateSVGs(options, waveColor)[numberOfSVG]
 
   return (

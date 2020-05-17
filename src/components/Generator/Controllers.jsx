@@ -1,8 +1,8 @@
 import React, { useState } from "react"
 import { Nothing } from "nothing-mock"
 import useClipboard from "react-use-clipboard"
-import { Paper, Tabs, Tab, Slider } from "@material-ui/core"
-import { ExpandLess, ExpandMore, FileCopy } from "@material-ui/icons"
+import { Paper, Tabs, Tab, Slider, Tooltip } from "@material-ui/core"
+import { ExpandLess, ExpandMore, FileCopy, Star } from "@material-ui/icons"
 import * as S from "./StylleAll"
 import { VanillaCSSWaveCode, HtmlWaveCode } from "./WaveCode"
 import CreateSVGs from "./CreateSVGs"
@@ -47,6 +47,9 @@ function Controllers({
     })
   }
 
+  const tooltipText =
+    "In CSS you can see, that mobile-version value was adjusted to be half of original."
+
   return (
     <S.Controllers>
       <Paper square>
@@ -81,6 +84,16 @@ function Controllers({
               {Object.entries(options).map(([key, option]) => (
                 <S.SliderContainer key={key}>
                   <label>{key === "Height" ? "Height of svg" : key}</label>
+                  {key === "Height" && (
+                    <S.HtmlTooltip
+                      title={tooltipText}
+                      className="tooltip"
+                      placement="right"
+                      classes={{ tooltip: { maxWidth: 700 } }}
+                    >
+                      <Star className="info-star" />
+                    </S.HtmlTooltip>
+                  )}
                   <Slider
                     value={option.value}
                     onChange={(e, newVal) => handleChange(key, newVal)}

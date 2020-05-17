@@ -1,5 +1,6 @@
 import styled from "styled-components"
-import { TextareaAutosize } from "@material-ui/core"
+import { TextareaAutosize, Tooltip } from "@material-ui/core"
+import { withStyles } from "@material-ui/core/styles"
 import { WaveContainer } from "./WaveCode"
 import ColorPicker from "material-ui-color-picker"
 
@@ -72,8 +73,23 @@ export const PickWaveContainer = styled.div`
   }
 `
 
+export const HtmlTooltip = withStyles(theme => ({
+  tooltip: {
+    backgroundColor: "#f5f5f9",
+    color: "rgba(0, 0, 0, 0.87)",
+    maxWidth: 220,
+    fontSize: theme.typography.pxToRem(22),
+    fontFamily: "'Montserrat', sans-serif",
+    border: "1px solid #dadde9",
+  },
+}))(Tooltip)
+
 export const SliderContainer = styled.div`
   margin-top: 10px;
+  .info-star {
+    color: #c12020;
+    margin-left: 5px;
+  }
 `
 
 export const BottomContent = styled.section`

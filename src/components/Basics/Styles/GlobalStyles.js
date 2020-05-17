@@ -17,10 +17,7 @@ export const GlobalStyles = createGlobalStyle`
     html, * {
         font-family: 'Montserrat', sans-serif;
     }
-    .coddy {
-        font-family: 'Source Code Pro', monospace;
-    }
-
+    
     body {
         max-height: 100vh;
         overflow: hidden;

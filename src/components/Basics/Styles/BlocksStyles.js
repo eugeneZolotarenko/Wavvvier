@@ -12,6 +12,9 @@ export const HeaderStyles = styled.nav`
 
   .logo {
     margin: 0;
+    a {
+      color: #20b2aa;
+    }
   }
 `
 
