@@ -54,6 +54,24 @@ export const ControllersContent = styled.div`
   }
 `
 
+export const PickWaveContainer = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  button {
+    margin-left: 10px;
+    background: none;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: rgba(0, 0, 0, 0.54);
+  }
+  .active {
+    color: ${props => props.waveColor};
+  }
+`
+
 export const SliderContainer = styled.div`
   margin-top: 10px;
 `

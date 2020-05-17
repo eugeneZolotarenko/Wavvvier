@@ -3,7 +3,7 @@ import React, { useState } from "react"
 import * as S from "./StylleAll"
 import Controllers from "./Controllers"
 import { Variables } from "./../Basics/Styles/GlobalStyles"
-import CreateSVG from "./CreateSVG"
+import CreateSVGs from "./CreateSVGs"
 
 function Main() {
   const [waveColor, setWaveColor] = useState(Variables.seashell)
@@ -25,7 +25,8 @@ function Main() {
       value: 20,
     },
   })
-  const svg = CreateSVG(options, waveColor)
+  const [numberOfSVG, setNumberOfSVG] = useState(1)
+  const svg = CreateSVGs(options, waveColor)[numberOfSVG]
 
   return (
     <>
@@ -38,6 +39,8 @@ function Main() {
           setWaveColor={setWaveColor}
           containerColor={containerColor}
           setContainerColor={setContainerColor}
+          numberOfSVG={numberOfSVG}
+          setNumberOfSVG={setNumberOfSVG}
         />
       </S.Header>
       <S.BottomContent className="iiii" waveColor={waveColor}></S.BottomContent>

@@ -5,6 +5,7 @@ import { Paper, Tabs, Tab, Slider } from "@material-ui/core"
 import { ExpandLess, ExpandMore, FileCopy } from "@material-ui/icons"
 import * as S from "./StylleAll"
 import { VanillaCSSWaveCode, HtmlWaveCode } from "./WaveCode"
+import CreateSVGs from "./CreateSVGs"
 
 function Controllers({
   options,
@@ -14,6 +15,8 @@ function Controllers({
   setWaveColor,
   containerColor,
   setContainerColor,
+  numberOfSVG,
+  setNumberOfSVG,
 }) {
   const [tab, setTab] = useState(0)
   const [isVisible, setVisible] = React.useState(true)
@@ -52,6 +55,7 @@ function Controllers({
           indicatorColor="primary"
           textColor="primary"
           onChange={(event, newTab) => {
+            setVisible(true)
             setTab(newTab)
           }}
         >
@@ -62,6 +66,18 @@ function Controllers({
         <S.ControllersContent waveColor={containerColor} isVisible={isVisible}>
           {tab === 0 && (
             <div>
+              <S.PickWaveContainer waveColor={containerColor}>
+                <span>Pick Wave:</span>
+                {CreateSVGs(options, waveColor).map((svg, i) => (
+                  <button
+                    className={numberOfSVG === i ? "active" : ""}
+                    onClick={() => setNumberOfSVG(i)}
+                    key={i}
+                  >
+                    {i + 1}
+                  </button>
+                ))}
+              </S.PickWaveContainer>
               {Object.entries(options).map(([key, option]) => (
                 <S.SliderContainer key={key}>
                   <label>{key === "Height" ? "Height of svg" : key}</label>
