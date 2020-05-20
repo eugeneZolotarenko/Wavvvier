@@ -73,17 +73,6 @@ export const PickWaveContainer = styled.div`
   }
 `
 
-export const HtmlTooltip = withStyles(theme => ({
-  tooltip: {
-    backgroundColor: "#f5f5f9",
-    color: "rgba(0, 0, 0, 0.87)",
-    maxWidth: 220,
-    fontSize: theme.typography.pxToRem(22),
-    fontFamily: "'Montserrat', sans-serif",
-    border: "1px solid #dadde9",
-  },
-}))(Tooltip)
-
 export const SliderContainer = styled.div`
   margin-top: 10px;
   .info-star {
@@ -139,3 +128,14 @@ export const ControlToggle = styled.div`
     justify-content: center;
   }
 `
+
+export const HtmlTooltip = withStyles(theme => ({
+  tooltip: {
+    backgroundColor: "#f5f5f9",
+    color: "rgba(0, 0, 0, 0.87)",
+    maxWidth: 220,
+    fontSize: theme.typography.pxToRem(22),
+    fontFamily: "'Montserrat', sans-serif",
+    border: "1px solid #dadde9",
+  },
+}))(Tooltip)

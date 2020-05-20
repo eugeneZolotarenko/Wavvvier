@@ -23,31 +23,41 @@ const responsiveWave = height => `
 
 const cssClassContainer = "wave-container"
 
+// Code for styled components
+
 export const WaveContainer = (options, svg, containerColor) => `
   ${container(containerColor)}
   &::before {
-    ${wave(svg, options.Height.value, options.Position.value)}
+    ${wave(svg, options.height.value, options.position.value)}
     @media(max-width:850px) {
-      ${responsiveWave(options.Height.value)}
+      ${responsiveWave(options.height.value)}
     }
   }
 `
+
+//
+
+// Code for users
+
 // prettier-ignore
+
 export const VanillaCSSWaveCode = (options, svg, containerColor) => `\
 .${cssClassContainer} {\
   ${container(containerColor)}\
 }
 
 .${cssClassContainer}::before { \
-  ${wave(svg, options.Height.value, options.Position.value)}\
+  ${wave(svg, options.height.value, options.position.value)}\
 }
 
 @media(max-width:850px) {
   .wave-container::before {\
-    ${responsiveWave(options.Height.value)}\
+    ${responsiveWave(options.height.value)}\
   }  
 }`
 
 export const HtmlWaveCode = `\
  <div class="${cssClassContainer}"></div>
 `
+
+//

@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components"
 
-export const Variables = {
+export const variables = {
   seashell: "#FFF5EE",
   lightseagreen: "#20B2AA",
 }

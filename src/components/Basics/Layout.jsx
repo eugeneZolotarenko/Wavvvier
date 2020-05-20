@@ -8,11 +8,12 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { Helmet } from "react-helmet"
 import { ThemeProvider } from "styled-components"
 import Nav from "./Nav"
 
 import ResetStyles from "./Styles/ResetStyles"
-import { GlobalStyles, Variables } from "./Styles/GlobalStyles"
+import { GlobalStyles, variables } from "./Styles/GlobalStyles"
 import { FooterStyles } from "./Styles/BlocksStyles"
 
 const Layout = ({ children }) => {
@@ -27,7 +28,17 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <ThemeProvider theme={Variables}>
+    <ThemeProvider theme={variables}>
+      <Helmet>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,500;1,500&display=swap"
+          rel="stylesheet"
+        />
+      </Helmet>
       <ResetStyles />
       <GlobalStyles />
       <Nav siteTitle={data.site.siteMetadata.title} />

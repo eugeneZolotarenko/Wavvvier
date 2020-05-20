@@ -1,11 +1,11 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Nothing } from "nothing-mock"
 import useClipboard from "react-use-clipboard"
-import { Paper, Tabs, Tab, Slider, Tooltip } from "@material-ui/core"
+import { Paper, Tabs, Tab, Slider } from "@material-ui/core"
 import { ExpandLess, ExpandMore, FileCopy, Star } from "@material-ui/icons"
-import * as S from "./StylleAll"
+import * as S from "./StyleAll"
 import { VanillaCSSWaveCode, HtmlWaveCode } from "./WaveCode"
-import CreateSVGs from "./CreateSVGs"
+import { createSVGs } from "./createSVGs"
 
 function Controllers({
   options,
@@ -29,12 +29,14 @@ function Controllers({
   })
 
   // Added for correct color pickinig
-  const document = Nothing
-  const inputs = document.querySelectorAll("input[name='color']")
-  inputs &&
-    inputs.forEach(input =>
-      input.addEventListener("click", e => e.preventDefault())
-    )
+  useEffect(() => {
+    const document = Nothing
+    const inputs = document.querySelectorAll("input[name='color']")
+    inputs &&
+      inputs.forEach(input =>
+        input.addEventListener("click", e => e.preventDefault())
+      )
+  }, [])
   //
 
   const handleChange = (key, newVal) => {
@@ -71,7 +73,7 @@ function Controllers({
             <div>
               <S.PickWaveContainer waveColor={containerColor}>
                 <span>Pick Wave:</span>
-                {CreateSVGs(options, waveColor).map((svg, i) => (
+                {createSVGs(options, waveColor).map((svg, i) => (
                   <button
                     className={numberOfSVG === i ? "active" : ""}
                     onClick={() => setNumberOfSVG(i)}
@@ -83,7 +85,11 @@ function Controllers({
               </S.PickWaveContainer>
               {Object.entries(options).map(([key, option]) => (
                 <S.SliderContainer key={key}>
-                  <label>{key === "Height" ? "Height of svg" : key}</label>
+                  <label>
+                    {key === "height"
+                      ? "Height of svg"
+                      : key.charAt(0).toUpperCase() + key.slice(1)}
+                  </label>
                   {key === "Height" && (
                     <S.HtmlTooltip
                       title={tooltipText}

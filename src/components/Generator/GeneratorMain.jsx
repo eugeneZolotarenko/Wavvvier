@@ -1,32 +1,32 @@
 //@ts-check
 import React, { useState } from "react"
-import * as S from "./StylleAll"
+import * as S from "./StyleAll"
 import Controllers from "./Controllers"
-import { Variables } from "./../Basics/Styles/GlobalStyles"
-import CreateSVGs from "./CreateSVGs"
+import { variables } from "./../Basics/Styles/GlobalStyles"
+import { createSVGs } from "./createSVGs"
 
 function Main() {
-  const [waveColor, setWaveColor] = useState(Variables.seashell)
-  const [containerColor, setContainerColor] = useState(Variables.lightseagreen)
+  const [waveColor, setWaveColor] = useState(variables.seashell)
+  const [containerColor, setContainerColor] = useState(variables.lightseagreen)
   const [options, setOptions] = useState({
-    Height: {
+    height: {
       min: 15,
       max: 168,
       value: 130,
     },
-    Sharpness: {
+    sharpness: {
       min: 60,
       max: 100,
       value: 100,
     },
-    Position: {
+    position: {
       min: 0,
       max: 100,
       value: 20,
     },
   })
   const [numberOfSVG, setNumberOfSVG] = useState(0)
-  const svg = CreateSVGs(options, waveColor)[numberOfSVG]
+  const svg = createSVGs(options, waveColor)[numberOfSVG]
 
   return (
     <>
@@ -43,7 +43,7 @@ function Main() {
           setNumberOfSVG={setNumberOfSVG}
         />
       </S.Header>
-      <S.BottomContent className="iiii" waveColor={waveColor}></S.BottomContent>
+      <S.BottomContent className="iiii" waveColor={waveColor} />
     </>
   )
 }
