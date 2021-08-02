@@ -2,7 +2,7 @@ module.exports = {
   pathPrefix: "/Wavvvier",
   siteMetadata: {
     title: `Wavvvier 🏄`,
-    description: `Generate your wavy transition easily with this generator!`,
+    description: `Generate your wavy transitions between pages easily with this site!`,
     author: `Eugene Zolotarenko`,
   },
   plugins: [

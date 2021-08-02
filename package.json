@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "wavier",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Generate your wavy transitions between pages easily with this site!",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Eugene Zolotarenko <eug.zolotarenko@gmail.com>",
   "dependencies": {
     "@material-ui/core": "^4.9.13",
     "@material-ui/icons": "^4.9.1",

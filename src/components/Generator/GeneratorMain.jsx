@@ -1,4 +1,3 @@
-//@ts-check
 import React, { useState } from "react"
 import { variables } from "./../Basics/Styles/GlobalStyles"
 import Controllers from "./Controllers"
@@ -43,7 +42,7 @@ function Main() {
           setNumberOfSVG={setNumberOfSVG}
         />
       </S.Header>
-      <S.BottomContent className="iiii" waveColor={waveColor} />
+      <S.BottomContent waveColor={waveColor} />
     </>
   )
 }

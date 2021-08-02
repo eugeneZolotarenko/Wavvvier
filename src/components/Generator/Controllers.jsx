@@ -58,7 +58,7 @@ function Controllers({
           value={tab}
           indicatorColor="primary"
           textColor="primary"
-          onChange={(event, newTab) => {
+          onChange={(e, newTab) => {
             setVisible(true)
             setTab(newTab)
           }}
@@ -72,7 +72,7 @@ function Controllers({
             <div>
               <S.PickWaveContainer waveColor={containerColor}>
                 <span>Pick Wave:</span>
-                {createSVGs(options, waveColor).map((svg, i) => (
+                {createSVGs(options, waveColor).map((_, i) => (
                   <button
                     className={numberOfSVG === i ? "active" : ""}
                     onClick={() => setNumberOfSVG(i)}
@@ -118,7 +118,7 @@ function Controllers({
                   />
                 </div>
                 <div className="colors-wrapper">
-                  <label>Set Continer color - </label>
+                  <label>Set Container color - </label>
                   <S.CustomColorPicker
                     backgroundcolor={containerColor}
                     name="color"
