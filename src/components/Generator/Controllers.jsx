@@ -86,7 +86,7 @@ function Controllers({
                 <S.SliderContainer key={key}>
                   <label>
                     {key === "height"
-                      ? "Height of svg"
+                      ? "Height of Wave"
                       : key.charAt(0).toUpperCase() + key.slice(1)}
                   </label>
                   {key === "Height" && (

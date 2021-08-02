@@ -1,7 +1,7 @@
 module.exports = {
-  pathPrefix: "/Wavvvier",
+  pathPrefix: "/Wavier",
   siteMetadata: {
-    title: `Wavvvier 🏄`,
+    title: `Wavier 🏄`,
     description: `Generate your wavy transitions between pages easily with this site!`,
     author: `Eugene Zolotarenko`,
   },
