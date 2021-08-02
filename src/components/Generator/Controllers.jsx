@@ -28,7 +28,7 @@ function Controllers({
     successDuration: 1500,
   })
 
-  // Added for correct color pickinig
+  // Added for correct color picking
   useEffect(() => {
     const document = Nothing
     const inputs = document.querySelectorAll("input[name='color']")
@@ -37,7 +37,6 @@ function Controllers({
         input.addEventListener("click", e => e.preventDefault())
       )
   }, [])
-  //
 
   const handleChange = (key, newVal) => {
     setOptions({
