@@ -1,9 +1,9 @@
 //@ts-check
 import React, { useState } from "react"
-import * as S from "./StyleAll"
-import Controllers from "./Controllers"
 import { variables } from "./../Basics/Styles/GlobalStyles"
+import Controllers from "./Controllers"
 import { createSVGs } from "./createSVGs"
+import * as S from "./StyleAll"
 
 function Main() {
   const [waveColor, setWaveColor] = useState(variables.seashell)

@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react"
-import { Nothing } from "nothing-mock"
-import useClipboard from "react-use-clipboard"
-import { Paper, Tabs, Tab, Slider } from "@material-ui/core"
+import { Paper, Slider, Tab, Tabs } from "@material-ui/core"
 import { ExpandLess, ExpandMore, FileCopy, Star } from "@material-ui/icons"
-import * as S from "./StyleAll"
-import { VanillaCSSWaveCode, HtmlWaveCode } from "./WaveCode"
+import { Nothing } from "nothing-mock"
+import React, { useEffect, useState } from "react"
+import useClipboard from "react-use-clipboard"
 import { createSVGs } from "./createSVGs"
+import * as S from "./StyleAll"
+import { HtmlWaveCode, VanillaCSSWaveCode } from "./WaveCode"
 
 function Controllers({
   options,
