@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react"
-import { Nothing } from "nothing-mock"
-import useClipboard from "react-use-clipboard"
-import { Paper, Tabs, Tab, Slider } from "@material-ui/core"
+import { Paper, Slider, Tab, Tabs } from "@material-ui/core"
 import { ExpandLess, ExpandMore, FileCopy, Star } from "@material-ui/icons"
-import * as S from "./StyleAll"
-import { VanillaCSSWaveCode, HtmlWaveCode } from "./WaveCode"
+import { Nothing } from "nothing-mock"
+import React, { useEffect, useState } from "react"
+import useClipboard from "react-use-clipboard"
 import { createSVGs } from "./createSVGs"
+import * as S from "./StyleAll"
+import { HtmlWaveCode, VanillaCSSWaveCode } from "./WaveCode"
 
 function Controllers({
   options,
@@ -28,7 +28,7 @@ function Controllers({
     successDuration: 1500,
   })
 
-  // Added for correct color pickinig
+  // Added for correct color picking
   useEffect(() => {
     const document = Nothing
     const inputs = document.querySelectorAll("input[name='color']")
@@ -37,7 +37,6 @@ function Controllers({
         input.addEventListener("click", e => e.preventDefault())
       )
   }, [])
-  //
 
   const handleChange = (key, newVal) => {
     setOptions({
@@ -59,7 +58,7 @@ function Controllers({
           value={tab}
           indicatorColor="primary"
           textColor="primary"
-          onChange={(event, newTab) => {
+          onChange={(e, newTab) => {
             setVisible(true)
             setTab(newTab)
           }}
@@ -73,7 +72,7 @@ function Controllers({
             <div>
               <S.PickWaveContainer waveColor={containerColor}>
                 <span>Pick Wave:</span>
-                {createSVGs(options, waveColor).map((svg, i) => (
+                {createSVGs(options, waveColor).map((_, i) => (
                   <button
                     className={numberOfSVG === i ? "active" : ""}
                     onClick={() => setNumberOfSVG(i)}
@@ -87,7 +86,7 @@ function Controllers({
                 <S.SliderContainer key={key}>
                   <label>
                     {key === "height"
-                      ? "Height of svg"
+                      ? "Height of Wave"
                       : key.charAt(0).toUpperCase() + key.slice(1)}
                   </label>
                   {key === "Height" && (
@@ -119,7 +118,7 @@ function Controllers({
                   />
                 </div>
                 <div className="colors-wrapper">
-                  <label>Set Continer color - </label>
+                  <label>Set Container color - </label>
                   <S.CustomColorPicker
                     backgroundcolor={containerColor}
                     name="color"

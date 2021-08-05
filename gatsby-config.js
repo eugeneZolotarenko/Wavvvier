@@ -1,8 +1,8 @@
 module.exports = {
-  pathPrefix: "/Wavvvier",
+  pathPrefix: "/",
   siteMetadata: {
-    title: `Wavvvier 🏄`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `Wavier 🏄`,
+    description: `Generate your wavy transitions between pages easily with this site!`,
     author: `Eugene Zolotarenko`,
   },
   plugins: [

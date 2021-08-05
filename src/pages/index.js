@@ -6,7 +6,7 @@ import Generator from "../components/Generator/GeneratorMain"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Wavvvy Header" />
+    <SEO title="Wavy Page Transitions" />
     <Generator />
   </Layout>
 )

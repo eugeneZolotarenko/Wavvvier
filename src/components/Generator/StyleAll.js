@@ -1,8 +1,8 @@
-import styled from "styled-components"
 import { TextareaAutosize, Tooltip } from "@material-ui/core"
 import { withStyles } from "@material-ui/core/styles"
-import { WaveContainer } from "./WaveCode"
 import ColorPicker from "material-ui-color-picker"
+import styled from "styled-components"
+import { WaveContainer } from "./WaveCode"
 
 export const Header = styled.header`
   margin-top: 68px;
