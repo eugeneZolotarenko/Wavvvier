@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: "/Wavier",
+  pathPrefix: "/",
   siteMetadata: {
     title: `Wavier 🏄`,
     description: `Generate your wavy transitions between pages easily with this site!`,
