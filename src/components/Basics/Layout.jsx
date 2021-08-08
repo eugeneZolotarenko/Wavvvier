@@ -46,9 +46,7 @@ const Layout = ({ children }) => {
         <main>{children}</main>
         <FooterStyles>
           © {new Date().getFullYear()}, Developed & Designed with ❤️ by
-          <a href="https://eugenezolotarenko.github.io/portfolio/">
-            Eugene Zolotarenko
-          </a>
+          <a href="https://github.com/eugeneZolotarenko">Eugene Zolotarenko</a>
         </FooterStyles>
       </div>
     </ThemeProvider>
