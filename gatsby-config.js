@@ -2,13 +2,14 @@ module.exports = {
   pathPrefix: "/",
   siteMetadata: {
     title: `Wavier 🏄`,
-    description: `Generate wavy transitions in-between sections easily with this tool!`,
+    description: `Generate wavy dividers for your website easily with this tool!`,
     keywords: [
       "wavy",
       "wavier",
       "wave",
       "waves",
-      "transition",
+      "divider",
+      "dividers",
       "header",
       "site",
       "website",

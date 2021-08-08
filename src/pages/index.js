@@ -9,7 +9,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO
-        title="Wavy Page Transitions"
+        title="Wavy Divider Generator"
         image={{
           src: appScreenshot,
           height: 300,
