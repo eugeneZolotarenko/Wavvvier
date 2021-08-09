@@ -3,9 +3,9 @@ import { ExpandLess, ExpandMore, FileCopy, Star } from "@material-ui/icons"
 import { Nothing } from "nothing-mock"
 import React, { useEffect, useState } from "react"
 import useClipboard from "react-use-clipboard"
-import { createSVGs } from "./createSVGs"
-import * as S from "./StyleAll"
-import { HtmlWaveCode, VanillaCSSWaveCode } from "./WaveCode"
+import { createSVGs } from "../helpers/createSVGs"
+import * as S from "../styles/StyleAll"
+import { HtmlWaveCode, VanillaCSSWaveCode } from "../helpers/WaveCode"
 
 function Controllers({
   options,

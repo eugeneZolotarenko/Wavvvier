@@ -2,11 +2,26 @@ import { TextareaAutosize, Tooltip } from "@material-ui/core"
 import { withStyles } from "@material-ui/core/styles"
 import ColorPicker from "material-ui-color-picker"
 import styled from "styled-components"
-import { WaveContainer } from "./WaveCode"
+import { WaveContainer } from "../helpers/WaveCode"
 
 export const Header = styled.header`
   margin-top: 68px;
   ${props => WaveContainer(props.options, props.svg, props.containerColor)};
+`
+
+export const Intro = styled.div`
+  width: 100%;
+  height: 100%;
+  padding: 5vh 3% 20px 3%;
+  h2 {
+    text-align: center;
+    font-size: 30px;
+    color: #156663;
+
+    @media (max-width: 700px) {
+      font-size: 20px;
+    }
+  }
 `
 
 export const Controllers = styled.section`

@@ -1,8 +1,9 @@
 import React, { useState } from "react"
 import { variables } from "./../Basics/Styles/GlobalStyles"
-import Controllers from "./Controllers"
-import { createSVGs } from "./createSVGs"
-import * as S from "./StyleAll"
+import Controllers from "./components/Controllers"
+import Intro from "./components/Intro"
+import { createSVGs } from "./helpers/createSVGs"
+import * as S from "./styles/StyleAll"
 
 function Main() {
   const [waveColor, setWaveColor] = useState(variables.seashell)
@@ -42,7 +43,9 @@ function Main() {
           setNumberOfSVG={setNumberOfSVG}
         />
       </S.Header>
-      <S.BottomContent waveColor={waveColor} />
+      <S.BottomContent waveColor={waveColor}>
+        <Intro waveColor={waveColor} />
+      </S.BottomContent>
     </>
   )
 }
