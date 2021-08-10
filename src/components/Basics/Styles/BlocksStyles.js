@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
 export const HeaderStyles = styled.nav`
+  max-height: ${props => props.theme.headerHeight};
   padding: 15px 3%;
   background-color: ${props => props.theme.seashell};
   border-bottom: 2px solid ${props => props.theme.lightseagreen};
@@ -21,10 +22,8 @@ export const HeaderStyles = styled.nav`
 export const FooterStyles = styled.footer`
   display: flex;
   justify-content: center;
-  position: absolute;
   width: 100%;
-  bottom: 0;
-  left: 0;
+  max-height: ${props => props.theme.footerHeight};
   padding: 10px;
   border-top: 2px solid ${props => props.theme.lightseagreen};
   background-color: ${props => props.theme.seashell};

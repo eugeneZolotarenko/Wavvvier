@@ -31,6 +31,9 @@ function Main() {
   return (
     <>
       <S.Header options={options} svg={svg} containerColor={containerColor}>
+        <Intro waveColor={waveColor} />
+      </S.Header>
+      <S.BottomContent waveColor={waveColor}>
         <Controllers
           options={options}
           setOptions={setOptions}
@@ -42,9 +45,6 @@ function Main() {
           numberOfSVG={numberOfSVG}
           setNumberOfSVG={setNumberOfSVG}
         />
-      </S.Header>
-      <S.BottomContent waveColor={waveColor}>
-        <Intro waveColor={waveColor} />
       </S.BottomContent>
     </>
   )

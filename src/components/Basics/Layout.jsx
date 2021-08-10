@@ -41,14 +41,13 @@ const Layout = ({ children }) => {
       </Helmet>
       <ResetStyles />
       <GlobalStyles />
+
       <Nav siteTitle={data.site.siteMetadata.title} />
-      <div>
-        <main>{children}</main>
-        <FooterStyles>
-          © {new Date().getFullYear()}, Developed & Designed with ❤️ by
-          <a href="https://github.com/eugeneZolotarenko">Eugene Zolotarenko</a>
-        </FooterStyles>
-      </div>
+      <main>{children}</main>
+      <FooterStyles>
+        © {new Date().getFullYear()}, Developed & Designed with ❤️ by
+        <a href="https://github.com/eugeneZolotarenko">Eugene Zolotarenko</a>
+      </FooterStyles>
     </ThemeProvider>
     // </ResetStyles>
   )

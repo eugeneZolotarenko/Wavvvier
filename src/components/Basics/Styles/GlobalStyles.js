@@ -3,6 +3,8 @@ import { createGlobalStyle } from "styled-components"
 export const variables = {
   seashell: "#FFF5EE",
   lightseagreen: "#20B2AA",
+  headerHeight: "68px",
+  footerHeight: "46px",
 }
 
 export const GlobalStyles = createGlobalStyle`
@@ -16,10 +18,5 @@ export const GlobalStyles = createGlobalStyle`
 
     html, * {
         font-family: 'Montserrat', sans-serif;
-    }
-    
-    body {
-        max-height: 100vh;
-        overflow: hidden;
     }
 `

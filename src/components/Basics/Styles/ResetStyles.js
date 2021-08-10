@@ -30,14 +30,9 @@ dd {
 }
 
 body {
-  min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-}
-
-#gatsby-focus-wrapper {
-    min-height: 100vh;
 }
 
 ul[class],

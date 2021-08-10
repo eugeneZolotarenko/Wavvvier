@@ -14,9 +14,10 @@ export const Intro = styled.div`
   height: 100%;
   padding: 5vh 3% 20px 3%;
   h2 {
+    line-height: 2;
     text-align: center;
-    font-size: 30px;
-    color: #156663;
+    font-size: 28px;
+    color: ${props => props.theme.seashell};
 
     @media (max-width: 700px) {
       font-size: 20px;
@@ -26,30 +27,47 @@ export const Intro = styled.div`
 
 export const Controllers = styled.section`
   width: 100%;
-  height: 100%;
+  height: calc(
+    60vh - ${props => props.theme.headerHeight} -
+      ${props => props.theme.footerHeight}
+  );
   display: flex;
-  align-items: start;
-  justify-content: center;
-  padding-top: 40px;
-  .MuiPaper-root {
-    max-width: 700px;
-    min-width: 300px;
-    width: 80%;
-    padding: 10px 25px 10px 25px;
-    z-index: 1;
-    background-color: rgba(255, 245, 238, 0.85);
-    .MuiTabs-root {
-      margin-bottom: 20px;
-    }
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+`
+
+export const ControllersWrapper = styled.div`
+  padding: 10px 30px 30px 30px;
+  background-color: ${props => props.theme.seashell};
+  width: 45vw;
+
+  @media (max-width: 1200px) {
+    width: 80vw;
+  }
+
+  @media (max-width: 500px) {
+    width: 90vw;
+  }
+
+  .button-wrapper {
+    padding-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 `
+
 export const ControllersContent = styled.div`
+  padding-top: 10px;
   width: 100%;
-  display: ${props => (props.isVisible ? "block" : "none")};
   .text-area-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
+    &:not(:first-child) {
+      margin-top: 40px;
+    }
     button {
       cursor: pointer;
       background: none;
@@ -98,7 +116,7 @@ export const SliderContainer = styled.div`
 
 export const BottomContent = styled.section`
   width: 100%;
-  height: 40vh;
+  height: 100%;
   background-color: ${props => props.waveColor};
 `
 
@@ -118,7 +136,7 @@ export const ColorPickerContainer = styled.div`
   width: fit-content;
   flex-wrap: wrap;
   .colors-wrapper {
-    margin: 15px 15px 0 0;
+    margin: 10px 15px 10px 0;
   }
 `
 

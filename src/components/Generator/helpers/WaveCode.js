@@ -12,7 +12,7 @@ const wave = (svg, height, position) => `
 `
 
 const container = color => `
-  height: 50vh;
+  height: 40vh;
   background-color: ${color};
   position: relative;
 `
