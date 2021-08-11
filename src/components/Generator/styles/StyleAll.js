@@ -27,7 +27,7 @@ export const Intro = styled.div`
 
 export const Controllers = styled.section`
   width: 100%;
-  height: calc(
+  min-height: calc(
     60vh - ${props => props.theme.headerHeight} -
       ${props => props.theme.footerHeight}
   );

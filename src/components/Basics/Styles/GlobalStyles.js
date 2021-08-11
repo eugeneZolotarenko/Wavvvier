@@ -19,4 +19,10 @@ export const GlobalStyles = createGlobalStyle`
     html, * {
         font-family: 'Montserrat', sans-serif;
     }
+
+    main {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
 `

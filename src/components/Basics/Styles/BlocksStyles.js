@@ -20,6 +20,7 @@ export const HeaderStyles = styled.nav`
 `
 
 export const FooterStyles = styled.footer`
+  margin-top: auto;
   display: flex;
   justify-content: center;
   width: 100%;

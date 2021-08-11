@@ -42,12 +42,15 @@ const Layout = ({ children }) => {
       <ResetStyles />
       <GlobalStyles />
 
-      <Nav siteTitle={data.site.siteMetadata.title} />
-      <main>{children}</main>
-      <FooterStyles>
-        © {new Date().getFullYear()}, Developed & Designed with ❤️ by
-        <a href="https://github.com/eugeneZolotarenko">Eugene Zolotarenko</a>
-      </FooterStyles>
+      <main>
+        <Nav siteTitle={data.site.siteMetadata.title} />
+        {children}
+
+        <FooterStyles>
+          © {new Date().getFullYear()}, Developed & Designed with ❤️ by
+          <a href="https://github.com/eugeneZolotarenko">Eugene Zolotarenko</a>
+        </FooterStyles>
+      </main>
     </ThemeProvider>
     // </ResetStyles>
   )

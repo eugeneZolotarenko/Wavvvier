@@ -11,8 +11,6 @@ import Button from "@material-ui/core/Button"
 import Dialog from "@material-ui/core/Dialog"
 import DialogActions from "@material-ui/core/DialogActions"
 import DialogContent from "@material-ui/core/DialogContent"
-import DialogContentText from "@material-ui/core/DialogContentText"
-import DialogTitle from "@material-ui/core/DialogTitle"
 
 function Controllers({
   options,
@@ -25,7 +23,6 @@ function Controllers({
   numberOfSVG,
   setNumberOfSVG,
 }) {
-  const [isVisible, setVisible] = useState(true)
   const [isCopiedCSS, setCopiedCSS] = useClipboard(
     VanillaCSSWaveCode(options, svg, containerColor),
     { successDuration: 1500 }
@@ -81,8 +78,9 @@ function Controllers({
         </S.PickWaveContainer>
         <S.ColorPickerContainer>
           <div className="colors-wrapper">
-            <label>Set Wave color - </label>
+            <label htmlFor="wave-color">Set Wave color - </label>
             <S.CustomColorPicker
+              id="wave-color"
               backgroundcolor={waveColor}
               name="color"
               value={waveColor}
@@ -90,8 +88,9 @@ function Controllers({
             />
           </div>
           <div className="colors-wrapper">
-            <label>Set Container color - </label>
+            <label htmlFor="container-color">Set Container color - </label>
             <S.CustomColorPicker
+              id="container-color"
               backgroundcolor={containerColor}
               name="color"
               value={containerColor}
@@ -101,12 +100,13 @@ function Controllers({
         </S.ColorPickerContainer>
         {Object.entries(options).map(([key, option]) => (
           <S.SliderContainer key={key}>
-            <label>
+            <label htmlFor="height">
               {key === "height"
                 ? "Height of Wave"
                 : key.charAt(0).toUpperCase() + key.slice(1)}
             </label>
             <Slider
+              id="height"
               value={option.value}
               onChange={(_, newVal) => handleChange(key, newVal)}
               min={option.min}
@@ -130,10 +130,7 @@ function Controllers({
           aria-labelledby="copy-code"
         >
           <DialogContent>
-            <S.ControllersContent
-              waveColor={containerColor}
-              isVisible={isVisible}
-            >
+            <S.ControllersContent waveColor={containerColor}>
               <div className="text-area-wrapper">
                 <button onClick={setCopiedHTML}>
                   <FileCopy />{" "}
