@@ -1,13 +1,13 @@
-import React, { useState } from "react"
-import { variables } from "./../Basics/Styles/GlobalStyles"
-import Controllers from "./components/Controllers"
-import Intro from "./components/Intro"
-import { createSVGs } from "./helpers/createSVGs"
-import * as S from "./styles/StyleAll"
+import React, { useState } from 'react';
+import { variables } from './../Basics/Styles/GlobalStyles';
+import Controllers from './components/Controllers/Controllers';
+import Intro from './components/Intro';
+import { createSVGs } from './helpers/createSVGs';
+import * as S from './styles/StyleAll';
 
 function Main() {
-  const [waveColor, setWaveColor] = useState(variables.seashell)
-  const [containerColor, setContainerColor] = useState(variables.lightseagreen)
+  const [waveColor, setWaveColor] = useState(variables.seashell);
+  const [containerColor, setContainerColor] = useState(variables.lightseagreen);
   const [options, setOptions] = useState({
     height: {
       min: 15,
@@ -24,9 +24,9 @@ function Main() {
       max: 100,
       value: 20,
     },
-  })
-  const [numberOfSVG, setNumberOfSVG] = useState(0)
-  const svg = createSVGs(options, waveColor)[numberOfSVG]
+  });
+  const [numberOfSVG, setNumberOfSVG] = useState(0);
+  const svg = createSVGs(options, waveColor)[numberOfSVG];
 
   return (
     <>
@@ -47,7 +47,7 @@ function Main() {
         />
       </S.BottomContent>
     </>
-  )
+  );
 }
 
-export default Main
+export default Main;

@@ -9,19 +9,19 @@ const wave = (svg, height, position) => `
   background-repeat: repeat no-repeat;
   background-position: ${position}vw bottom;
   background-image: url("${svg}");
-`
+`;
 
-const container = color => `
+const container = (color) => `
   height: 40vh;
   background-color: ${color};
   position: relative;
-`
+`;
 
-const responsiveWave = height => `
+const responsiveWave = (height) => `
     height: ${height * 0.5}px
-`
+`;
 
-const cssClassContainer = "wave-container"
+const cssClassContainer = 'wave-container';
 
 // Code for styled components
 
@@ -33,7 +33,7 @@ export const WaveContainer = (options, svg, containerColor) => `
       ${responsiveWave(options.height.value)}
     }
   }
-`
+`;
 
 //
 
@@ -58,6 +58,6 @@ export const VanillaCSSWaveCode = (options, svg, containerColor) => `\
 
 export const HtmlWaveCode = `\
  <div class="${cssClassContainer}"></div>
-`
+`;
 
 //

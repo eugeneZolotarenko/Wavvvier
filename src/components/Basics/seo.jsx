@@ -5,10 +5,10 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet';
+import { useStaticQuery, graphql } from 'gatsby';
 
 function SEO({ description, lang, meta, image: metaImage, title }) {
   const { site } = useStaticQuery(
@@ -27,15 +27,15 @@ function SEO({ description, lang, meta, image: metaImage, title }) {
         }
       }
     `
-  )
+  );
 
-  console.log(site.siteMetadata.siteUrl)
+  console.log(site.siteMetadata.siteUrl);
 
-  const metaDescription = description || site.siteMetadata.description
+  const metaDescription = description || site.siteMetadata.description;
   const image =
     metaImage && metaImage.src
       ? `${site.siteMetadata.siteUrl}${metaImage.src}`
-      : null
+      : null;
 
   return (
     <Helmet
@@ -83,46 +83,46 @@ function SEO({ description, lang, meta, image: metaImage, title }) {
         },
         {
           name: `keywords`,
-          content: site.siteMetadata.keywords.join(","),
+          content: site.siteMetadata.keywords.join(','),
         },
       ]
         .concat(
           metaImage
             ? [
                 {
-                  property: "og:image",
+                  property: 'og:image',
                   content: image,
                 },
                 {
-                  property: "og:image:width",
+                  property: 'og:image:width',
                   content: metaImage.width,
                 },
                 {
-                  property: "og:image:height",
+                  property: 'og:image:height',
                   content: metaImage.height,
                 },
                 {
-                  name: "twitter:card",
-                  content: "summary_large_image",
+                  name: 'twitter:card',
+                  content: 'summary_large_image',
                 },
               ]
             : [
                 {
-                  name: "twitter:card",
-                  content: "summary",
+                  name: 'twitter:card',
+                  content: 'summary',
                 },
               ]
         )
         .concat(meta)}
     />
-  )
+  );
 }
 
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
-}
+};
 
 SEO.propTypes = {
   description: PropTypes.string,
@@ -134,6 +134,6 @@ SEO.propTypes = {
     height: PropTypes.number.isRequired,
     width: PropTypes.number.isRequired,
   }),
-}
+};
 
-export default SEO
+export default SEO;

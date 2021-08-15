@@ -1,11 +1,12 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from 'styled-components';
 
 export const variables = {
-  seashell: "#FFF5EE",
-  lightseagreen: "#20B2AA",
-  headerHeight: "68px",
-  footerHeight: "46px",
-}
+  material: '#3f51b5',
+  seashell: '#FFF5EE',
+  lightseagreen: '#20B2AA',
+  headerHeight: '68px',
+  footerHeight: '46px',
+};
 
 export const GlobalStyles = createGlobalStyle`
     html {
@@ -25,4 +26,4 @@ export const GlobalStyles = createGlobalStyle`
         display: flex;
         flex-direction: column;
     }
-`
+`;

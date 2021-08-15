@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from 'styled-components';
 
 const ResetStyles = createGlobalStyle`
 *,
@@ -60,6 +60,11 @@ select {
   font: inherit;
 }
 
+button {
+  background: none;
+  border: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
@@ -68,6 +73,6 @@ select {
     scroll-behavior: auto !important;
   }
 }
-`
+`;
 
-export default ResetStyles
+export default ResetStyles;

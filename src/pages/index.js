@@ -1,9 +1,9 @@
-import React from "react"
+import React from 'react';
 
-import Layout from "../components/Basics/Layout"
-import SEO from "../components/Basics/seo"
-import Generator from "../components/Generator/GeneratorMain"
-import appScreenshot from "../images/appScreenshot.png"
+import Layout from '../components/Basics/Layout';
+import SEO from '../components/Basics/seo';
+import Generator from '../components/Generator/GeneratorMain';
+import appScreenshot from '../images/appScreenshot.png';
 
 const IndexPage = () => {
   return (
@@ -18,7 +18,7 @@ const IndexPage = () => {
       />
       <Generator />
     </Layout>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;

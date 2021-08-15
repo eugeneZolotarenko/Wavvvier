@@ -1,10 +1,10 @@
-import styled from "styled-components"
+import styled from 'styled-components';
 
 export const HeaderStyles = styled.nav`
-  max-height: ${props => props.theme.headerHeight};
+  max-height: ${(props) => props.theme.headerHeight};
   padding: 15px 3%;
-  background-color: ${props => props.theme.seashell};
-  border-bottom: 2px solid ${props => props.theme.lightseagreen};
+  background-color: ${(props) => props.theme.seashell};
+  border-bottom: 2px solid ${(props) => props.theme.lightseagreen};
   position: absolute;
   width: 100%;
   top: 0;
@@ -17,17 +17,17 @@ export const HeaderStyles = styled.nav`
       color: #20b2aa;
     }
   }
-`
+`;
 
 export const FooterStyles = styled.footer`
   margin-top: auto;
   display: flex;
   justify-content: center;
   width: 100%;
-  max-height: ${props => props.theme.footerHeight};
+  max-height: ${(props) => props.theme.footerHeight};
   padding: 10px;
-  border-top: 2px solid ${props => props.theme.lightseagreen};
-  background-color: ${props => props.theme.seashell};
+  border-top: 2px solid ${(props) => props.theme.lightseagreen};
+  background-color: ${(props) => props.theme.seashell};
   flex-wrap: wrap;
 
   a {
@@ -37,4 +37,4 @@ export const FooterStyles = styled.footer`
   @media (max-width: 360px) {
     font-size: 1.45rem;
   }
-`
+`;

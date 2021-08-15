@@ -1,5 +1,5 @@
-import React from "react"
-import * as S from "../styles/StyleAll"
+import React from 'react';
+import * as S from '../styles/StyleAll';
 
 function Main({ waveColor }) {
   return (
@@ -10,7 +10,7 @@ function Main({ waveColor }) {
         Copy HTML/CSS and you are good to go! 🔥
       </h2>
     </S.Intro>
-  )
+  );
 }
 
-export default Main
+export default Main;

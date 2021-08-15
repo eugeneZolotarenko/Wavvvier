@@ -1,11 +1,11 @@
 export function createSVGs(options, waveColor) {
   function setSvgItem(num) {
-    return Math.floor(options.sharpness.value * 0.01 * num)
+    return Math.floor(options.sharpness.value * 0.01 * num);
   }
 
-  let waveColorSvg
+  let waveColorSvg;
   if (waveColor) {
-    waveColorSvg = waveColor.replace(/#/g, "%23")
+    waveColorSvg = waveColor.replace(/#/g, '%23');
   }
 
   // prettier-ignore

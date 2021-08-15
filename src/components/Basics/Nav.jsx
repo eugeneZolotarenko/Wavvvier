@@ -1,7 +1,7 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
-import { HeaderStyles } from "./Styles/BlocksStyles"
+import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
+import React from 'react';
+import { HeaderStyles } from './Styles/BlocksStyles';
 
 const Header = ({ siteTitle }) => (
   <HeaderStyles>
@@ -11,14 +11,14 @@ const Header = ({ siteTitle }) => (
       </h1>
     </div>
   </HeaderStyles>
-)
+);
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-}
+};
 
 Header.defaultProps = {
   siteTitle: ``,
-}
+};
 
-export default Header
+export default Header;

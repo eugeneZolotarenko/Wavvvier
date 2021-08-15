@@ -5,16 +5,16 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-import { Helmet } from "react-helmet"
-import { ThemeProvider } from "styled-components"
-import Nav from "./Nav"
+import React from 'react';
+import PropTypes from 'prop-types';
+import { useStaticQuery, graphql } from 'gatsby';
+import { Helmet } from 'react-helmet';
+import { ThemeProvider } from 'styled-components';
+import Nav from './Nav';
 
-import ResetStyles from "./Styles/ResetStyles"
-import { GlobalStyles, variables } from "./Styles/GlobalStyles"
-import { FooterStyles } from "./Styles/BlocksStyles"
+import ResetStyles from './Styles/ResetStyles';
+import { GlobalStyles, variables } from './Styles/GlobalStyles';
+import { FooterStyles } from './Styles/BlocksStyles';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <ThemeProvider theme={variables}>
@@ -53,11 +53,11 @@ const Layout = ({ children }) => {
       </main>
     </ThemeProvider>
     // </ResetStyles>
-  )
-}
+  );
+};
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Layout
+export default Layout;
