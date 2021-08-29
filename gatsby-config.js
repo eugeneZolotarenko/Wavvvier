@@ -1,38 +1,44 @@
 module.exports = {
-  pathPrefix: "/",
+  pathPrefix: '/',
   siteMetadata: {
     title: `Wavier 🏄`,
     description: `Generate wavy dividers for your website easily with this tool!`,
     keywords: [
-      "wavy",
-      "svg",
-      "css",
-      "wave",
-      "waves",
-      "divider",
-      "dividers",
-      "section",
-      "header",
-      "helper",
-      "generator",
-      "generate",
-      "front-end",
-      "developer",
-      "wavier",
+      'wavy',
+      'svg',
+      'css',
+      'wave',
+      'waves',
+      'divider',
+      'dividers',
+      'section',
+      'header',
+      'helper',
+      'generator',
+      'generate',
+      'front-end',
+      'developer',
+      'wavier',
     ],
-    image: "/src/images/websiteScreenshot.png",
+    image: '/src/images/websiteScreenshot.png',
     author: `Eugene Zolotarenko`,
-    twitterUsername: "@eugZolotarenko",
-    siteUrl: "https://wavier.art",
+    twitterUsername: '@eugZolotarenko',
+    siteUrl: 'https://wavier.art',
   },
   plugins: [
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingIds: ["G-MD62YYRMG8"],
+        trackingIds: ['G-MD62YYRMG8'],
         pluginConfig: {
           head: true,
         },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-adsense`,
+      options: {
+        publisherId: `ca-pub-8272593002493911`,
       },
     },
     {
@@ -70,4 +76,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};
