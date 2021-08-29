@@ -82,7 +82,6 @@ function Controllers({
               onChange={(_, newVal) => handleChange(key, newVal)}
               min={option.min}
               max={option.max}
-              backgroundColor="black"
             />
           </S.SliderContainer>
         ))}

@@ -12,15 +12,30 @@ export const Header = styled.header`
 export const Intro = styled.div`
   width: 100%;
   height: 100%;
-  padding: 5vh 3% 20px 3%;
+  padding: 3.5vh 3% 20px 3%;
+
+  h1,
   h2 {
-    line-height: 2;
     text-align: center;
-    font-size: 28px;
     color: ${(props) => props.theme.seashell};
+  }
+
+  h1 {
+    line-height: 2;
+    font-size: 30px;
+    margin-bottom: 7px;
 
     @media (max-width: 700px) {
-      font-size: 20px;
+      font-size: 22px;
+    }
+  }
+
+  h2 {
+    line-height: 1.7;
+    font-size: 23px;
+
+    @media (max-width: 700px) {
+      font-size: 17px;
     }
   }
 `;
