@@ -10,6 +10,14 @@ const Header = ({ siteTitle }) => (
         <Link to="/">{siteTitle}</Link>
       </h1>
     </div>
+    <a
+      target="_blank"
+      rel="noreferrer"
+      className="github-link"
+      href="https://github.com/eugeneZolotarenko/Wavvvier"
+    >
+      ⭐️ Star it on Github
+    </a>
   </HeaderStyles>
 );
 

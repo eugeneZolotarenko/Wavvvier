@@ -48,11 +48,16 @@ const Layout = ({ children }) => {
 
         <FooterStyles>
           © {new Date().getFullYear()}, Developed & Designed with ❤️ by
-          <a href="https://github.com/eugeneZolotarenko">Eugene Zolotarenko</a>
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://twitter.com/eugZolotarenko"
+          >
+            Eugene Zolotarenko
+          </a>
         </FooterStyles>
       </main>
     </ThemeProvider>
-    // </ResetStyles>
   );
 };
 

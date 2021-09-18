@@ -4,6 +4,7 @@ export const variables = {
   material: '#3f51b5',
   seashell: '#FFF5EE',
   lightseagreen: '#20B2AA',
+  pinky: '#f50057',
   headerHeight: '68px',
   footerHeight: '46px',
 };

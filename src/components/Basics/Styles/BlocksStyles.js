@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 export const HeaderStyles = styled.nav`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   max-height: ${(props) => props.theme.headerHeight};
   padding: 15px 3%;
   background-color: ${(props) => props.theme.seashell};
@@ -14,8 +17,13 @@ export const HeaderStyles = styled.nav`
   .logo {
     margin: 0;
     a {
-      color: #20b2aa;
+      color: ${(props) => props.theme.lightseagreen};
     }
+  }
+
+  .github-link {
+    color: ${(props) => props.theme.pinky};
+    font-weight: 500;
   }
 `;
 
@@ -24,7 +32,6 @@ export const FooterStyles = styled.footer`
   display: flex;
   justify-content: center;
   width: 100%;
-  max-height: ${(props) => props.theme.footerHeight};
   padding: 10px;
   border-top: 2px solid ${(props) => props.theme.lightseagreen};
   background-color: ${(props) => props.theme.seashell};
@@ -32,6 +39,8 @@ export const FooterStyles = styled.footer`
 
   a {
     margin-left: 5px;
+    font-weight: 500;
+    color: ${(props) => props.theme.pinky};
   }
 
   @media (max-width: 360px) {
